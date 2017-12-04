@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<title>myweb</title>
+<script>
+	var array1 = ["商學院","工學院","建設學院"]
+	var array2 = ["會計學系","國際經營與貿易學系","國際經營與貿易學系國際企業管理全英語學士班"]
+	var array3 = ["機械與電腦輔助工程學系","纖維與複合材料學系","工業工程與系統管理學系"]
+	var array4 = ["土木工程學系","水利工程與資源保育學系"," 都市計畫與空間資訊學系"]
+    
+    function changedoption(value)
+    {
+    	var str = ''
+    	switch(value)
+        {
+        	case "商學院":
+            	str = str + "<select>"
+                for(i=0;i < array2.length ;i++)
+                {
+                	str = str + "<option>" + array2[i] + "</option>"
+                }
+                str = str + "</select>"
+                document.getElementById('demo').innerHTML = str
+                break;
+            case "工學院":
+            	str = str + "<select>"
+                for(i=0;i < array3.length ;i++)
+                {
+                	str = str + "<option>" + array3[i] + "</option>"
+                }
+                str = str + "</select>"
+                document.getElementById('demo').innerHTML = str
+                break;
+            case "建設學院":
+            	str = str + "<select>"
+                for(i=0;i < array4.length ;i++)
+                {
+                	str = str + "<option>" + array4[i] + "</option>"
+                }
+                str = str + "</select>"
+                document.getElementById('demo').innerHTML = str
+                break;
+        }
+    }
+</script>
+
+</head>
+
+<body>
+
+<select name="prodlst1" id="prodlst1" onchange = "changedoption(document.getElementById('prodlst1').value)">
+	<script>
+    	for(i=0;i < array1.length ;i++)
+        {
+        	document.write("<option>" + array1[i] + "</option>")
+        }
+    </script>
+</select>
+
+<p id="demo"></p>
+
+</body>
+
+</html>
